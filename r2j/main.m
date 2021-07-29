@@ -60,6 +60,7 @@ int main(int argc, const char * argv[]) {
             Round *rnd = rounds[i];
 
             json = [json stringByAppendingString:@"{\n"];
+            json = [json stringByAppendingString:[Utils toJson:@"id" withIntVal:i includeComma:TRUE]];
             json = [json stringByAppendingString:[Utils toJson:@"roundName" withVal:rnd.Name includeComma:TRUE]];
             json = [json stringByAppendingString:[Utils toJson:@"system" withVal:rnd.MeasurementSystem includeComma:TRUE]];
             json = [json stringByAppendingString:[Utils toJson:@"type" withVal:rnd.RoundType includeComma:TRUE]];
